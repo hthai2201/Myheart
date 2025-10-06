@@ -98,21 +98,21 @@ document.head.appendChild(mainScript);
 // SECURITY & ANTI-DEBUGGING FEATURES
 // =============================================================================
 
-// Prevent common developer tools shortcuts
-document.addEventListener("keydown", function (event) {
-  // Block F12 (DevTools)
-  if (
-    "F12" === event.key ||
-    // Block Ctrl+Shift+I/J (Inspect Element/Console)
-    (event.ctrlKey &&
-      event.shiftKey &&
-      ("I" === event.key || "J" === event.key)) ||
-    // Block Ctrl+U (View Source)
-    (event.ctrlKey && "U" === event.key)
-  ) {
-    event.preventDefault();
-  }
-});
+// // Prevent common developer tools shortcuts
+// document.addEventListener("keydown", function (event) {
+//   // Block F12 (DevTools)
+//   if (
+//     "F12" === event.key ||
+//     // Block Ctrl+Shift+I/J (Inspect Element/Console)
+//     (event.ctrlKey &&
+//       event.shiftKey &&
+//       ("I" === event.key || "J" === event.key)) ||
+//     // Block Ctrl+U (View Source)
+//     (event.ctrlKey && "U" === event.key)
+//   ) {
+//     event.preventDefault();
+//   }
+// });
 
 // // Prevent right-click context menu
 // document.addEventListener("contextmenu", function (event) {

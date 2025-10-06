@@ -38,9 +38,9 @@ if (!window["Heartlove"]) {
         let a = false;
         const s = () => {
           o["innerHTML"] =
-            '<i class="fas ' + a
-              ? "fa-volume-high"
-              : "fa-volume-xmark" + '"></i>';
+            '<i class="fas ' +
+            (a ? "fa-volume-high" : "fa-volume-xmark") +
+            '"></i>';
         };
         const r = () => {
           e["play"]()
@@ -2541,66 +2541,7 @@ function triggerSceneActivation(t) {
     }
   }
 }
-const img = new Image();
-img.src =
-  "https://github.com/Panbap/anh/blob/main/error/myheartv1a1.png?raw=true";
-img["style"].display = "none";
-img["onload"] = () => {
-  img.style.display = "block";
-  img.style.maxWidth = "100%";
-  img["style"]["height"] = "auto";
-};
-img["onerror"] = () => {
-  console["warn"](" ");
-  const e = document.createElement("canvas");
-  const o = e["getContext"]("2d");
-  function a() {
-    e["width"] = window["innerWidth"];
-    e["height"] = window.innerHeight;
-    (function () {
-      o["clearRect"](0, 0, e["width"], e["height"]);
-      o["fillStyle"] = "rgba(20, 20, 20, 0.97)";
-      o["fillRect"](0, 0, e["width"], e["height"]);
-      o["fillStyle"] = "#ffffff";
-      o["font"] = "bold 48px Arial, sans-serif";
-      o["textAlign"] = "center";
-      o["textBaseline"] = "middle";
-      const s = "Hệ thống đang cập nhật";
-      const r = 0.8 * e["width"];
-      const i = e["height"] / 2 - 30;
-      !(function (e, o, a, s, r, n) {
-        const c = o["split"](" ");
-        let l = "";
-        const x = [];
-        for (let t = 0; t < c["length"]; t++) {
-          const o = l + c[t] + " ";
-          if (e.measureText(o)["width"] > r && t > 0) {
-            x["push"](l["trim"]());
-            l = c[t] + " ";
-          } else {
-            l = o;
-          }
-        }
-        x.push(l.trim());
-        x.forEach((t, o) => {
-          e["fillText"](t, a, s + o * n);
-        });
-      })(o, s, e["width"] / 2, i, r, 60);
-    })();
-  }
-  window["addEventListener"]("resize", a);
-  a();
-  Object.assign(e.style, {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100vw",
-    height: "100vh",
-    zIndex: 9999,
-    pointerEvents: "auto",
-  });
-  document.body["appendChild"](e);
-};
+
 fadeObjects["push"](streamHeart, shootingStars);
 [streamHeart, shootingStars]["forEach"]((t) => {
   if (t) {
